@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>404 - Page Not Found</title>
+</head>
+<body>
+	<style>
+		body{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		h1{
+			color:red;
+			font-size:100px;
+			font-weight:bold;
+			text-align:center;
+			font-family:Arial
+		}
+	</style>
+	<h1>404 - Page Not Found</h1>
+
+	<script>
+		let state = true;
+		let show ='';
+		
+		setInterval(()=>{
+			const h1 = document.querySelector('h1');
+			show = state? '' : 'none';
+			h1.style.display = show;
+			state = !state
+		}, 250);
+		
+	</script>
+</body>
+</html>
