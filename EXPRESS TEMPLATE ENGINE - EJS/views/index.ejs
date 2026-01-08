@@ -1,21 +1,12 @@
-<%- include('layouts/header') %> 
- 
+<p><%= typeof(result) %></p>
 
-    <div class="container">
-      <%- include('layouts/navbar') %>
-      
-      <p><%= typeof(result) %></p>
-
-      <table class="table">
-        <tr>
-          <th>Nama</th> <th>NIP</th> <th>Jabatan</th>
-        </tr>
-        <tr id="isiTabel">
-          <td><%= result.nama %></td>
-          <td><%= result.NIP %></td>
-          <td><%= result.jabatan %></td>
-        </tr>
-      </table>
-    </div>
-    
-<%- include('layouts/footer') %> 
+<table class="table">
+  <tr>
+    <th>Nama</th> <th>NIP</th> <th>Jabatan</th>
+  </tr>
+  <tr id="isiTabel">
+    <td><%= result.nama %></td>
+    <td><%= result.NIP %></td>
+    <td><%= result.jabatan %></td>
+  </tr>
+</table>
