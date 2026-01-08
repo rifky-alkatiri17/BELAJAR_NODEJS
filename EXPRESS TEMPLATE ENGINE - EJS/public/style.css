@@ -1,0 +1,9 @@
+.bg-custom {
+  /*background-color: #1e3a8a;*/
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);/*dark elegant gradient*/
+  /*background: linear-gradient(90deg, #00f260, #0575e6); /*neon cyber*/
+  /*background: linear-gradient(90deg, #667eea, #764ba2); /*purple modern*/
+  /*background: linear-gradient(90deg, rgba(20,20,20,0.8), rgba(40,40,40,0.6)); /*dark glassy*/ 
+  /*background: linear-gradient(90deg,#ff6a00,#ee0979,#7f00ff); /*pelangi tipis*/
+  backdrop-filter: blur(10px);
+}

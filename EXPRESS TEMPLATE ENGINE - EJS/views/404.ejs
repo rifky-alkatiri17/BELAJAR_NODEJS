@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>404 - Page Not Found</title>
-</head>
-<body>
+<%- include('layouts/header') %> 
 	<style>
-		body{
-			display: flex;
-			align-items: center;
-			justify-content: center;
+		body{			
 			height: 100vh;
 		}
 		h1{
@@ -21,8 +11,12 @@
 			font-family:Arial
 		}
 	</style>
-	<h1>404 - Page Not Found</h1>
 
+	<div class="container">
+		<%-include('layouts/navbar')%>
+		<h1>404 - Page Not Found</h1>
+	</div>
+	
 	<script>
 		let state = true;
 		let show ='';
@@ -35,5 +29,5 @@
 		}, 250);
 		
 	</script>
-</body>
-</html>
+
+<%- include('layouts/footer') %> 
