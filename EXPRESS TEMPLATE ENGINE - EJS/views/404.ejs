@@ -1,33 +1,30 @@
-<%- include('layouts/header') %> 
-	<style>
-		body{			
-			height: 100vh;
-		}
-		h1{
-			color:red;
-			font-size:100px;
-			font-weight:bold;
-			text-align:center;
-			font-family:Arial
-		}
-	</style>
+<style>
+	body{			
+		height: 100vh;
+	}
+	h1{
+		color:red;
+		font-size:100px;
+		font-weight:bold;
+		text-align:center;
+		font-family:Arial
+	}
+</style>
 
-	<div class="container">
-		<%-include('layouts/navbar')%>
-		<h1>404 - Page Not Found</h1>
-	</div>
+<div class="container">
+	<h1>404 - Page Not Found</h1>
+</div>
+
+<script>
+	let state = true;
+	let show ='';
 	
-	<script>
-		let state = true;
-		let show ='';
-		
-		setInterval(()=>{
-			const h1 = document.querySelector('h1');
-			show = state? '' : 'none';
-			h1.style.display = show;
-			state = !state
-		}, 250);
-		
-	</script>
+	setInterval(()=>{
+		const h1 = document.querySelector('h1');
+		show = state? '' : 'none';
+		h1.style.display = show;
+		state = !state
+	}, 250);
+	
+</script>
 
-<%- include('layouts/footer') %> 

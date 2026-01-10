@@ -44,7 +44,10 @@ app.get('/', (req,res)=>{
 
 app.use('', (req,res)=>{
 	// res.sendFile('404.html',{root:__dirname})
-	res.render('404', {title:'Page Not Found'})
+	res.render('404', {
+		layout: 'layouts/main-layout',
+		title:'Page Not Found'
+	})
 })
 
 
