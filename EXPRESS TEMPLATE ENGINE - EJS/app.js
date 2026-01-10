@@ -4,11 +4,26 @@ const port = 7000;
 // const ejs = require('ejs');
 const fs = require('fs');
 const expressLayouts = require('express-ejs-layouts');
-// file ejs relative terhadap folder views
 
+// file ejs relative terhadap folder views
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(expressLayouts);
+
+// middleware
+app.use('/',(req,res,next)=>{
+	/*res.render('Hello', {
+		layout:'layouts/main-layout',
+		// title: 'Rifki Alkatiri'
+	});*/
+	console.log('midleware1 dijalankan...');	
+	console.log('Time : ' + Date())
+	next()
+});
+
+// app.use();
+
+// end middleware
 
 app.get('/about', (req,res)=>{
 	// res.send('ini adalah halaman about...')
