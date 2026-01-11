@@ -1,1 +1,32 @@
 <h1>Ini Adalah Halaman <%= title %> </h1>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">No. Hp</th>
+            <th scope="col">Email</th>
+            <th scope="col">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (data) { %>
+                <% data.forEach((element,i) => { %>
+                    <tr>
+                        <th scope="row"><%= i+1 %></th>
+                        <td><%= element.nama %></td>
+                        <td><%= element.nohp %></td>
+                        <td><%= element.email %></td>
+                        <td>
+                            <a href="details/<%= element.nama %>" class="badge text-bg-success">Detail</a>
+                        </td>
+                    </tr>  
+                <% }) %>
+            <% } %>           
+            
+        </tbody>
+    </table>
+</div>
+

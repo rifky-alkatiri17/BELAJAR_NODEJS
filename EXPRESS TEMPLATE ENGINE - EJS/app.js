@@ -1,25 +1,27 @@
-const express = require('express');
-const app = express();
+const express = require('express'); //npm
+const app = express(); 
 const port = 7000;
 // const ejs = require('ejs');
-const fs = require('fs');
-const expressLayouts = require('express-ejs-layouts');
+const fs = require('fs'); //core
+const expressLayouts = require('express-ejs-layouts'); //npm
+const {loadData, findData} = require('./utils/functions.js'); //user-defined
+const { title } = require('process');
 
 // file ejs relative terhadap folder views
-app.set('view engine', 'ejs');
-app.use(express.static('public'));
-app.use(expressLayouts);
+app.set('view engine', 'ejs'); //config
+app.use(express.static('public')); //config
+app.use(expressLayouts); //config
 
 // middleware
-app.use('/',(req,res,next)=>{
-	/*res.render('Hello', {
+/*app.use('/',(req,res,next)=>{
+	res.render('Hello', {
 		layout:'layouts/main-layout',
 		// title: 'Rifki Alkatiri'
-	});*/
+	});
 	console.log('midleware1 dijalankan...');	
 	console.log('Time : ' + Date())
 	next()
-});
+});*/
 
 // app.use();
 
@@ -35,9 +37,28 @@ app.get('/about', (req,res)=>{
 
 app.get('/contact', (req,res)=>{
 	// res.send('ini adalah halaman contact...')
+	const data = loadData('./data/data-contacts.json');	
 	res.render('contact', {
 		layout: 'layouts/main-layout',
-		title:'Halaman Contact'
+		title:'Halaman Contact',
+		data
+	})
+});
+
+app.use('/details/:nama', (req,res,next)=>{
+	const data = loadData('./data/data-contacts.json');
+	const result = findData(data, req.params.nama);
+	if(!result){
+		return res.status(404).send('Data tidak ditemukan');
+	}
+	next()
+});
+
+app.get('/details/:nama', (req,res)=>{
+	res.render('contact',{
+		layout:'layouts/main-layout',
+		title: 'Halaman Contact',
+		data: result
 	})
 });
 
@@ -57,7 +78,7 @@ app.get('/', (req,res)=>{
 	});
 });
 
-app.use('', (req,res)=>{
+app.use('/', (req,res)=>{
 	// res.sendFile('404.html',{root:__dirname})
 	res.render('404', {
 		layout: 'layouts/main-layout',
