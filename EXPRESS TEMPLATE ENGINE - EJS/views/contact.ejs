@@ -12,21 +12,31 @@
             </tr>
         </thead>
         <tbody>
-            <% if (data) { %>
+            <% if (data && data.length > 0) { %>
                 <% data.forEach((element,i) => { %>
                     <tr>
-                        <th scope="row"><%= i+1 %></th>
+                        <td scope="row"><%= i+1 %></td>
                         <td><%= element.nama %></td>
                         <td><%= element.nohp %></td>
                         <td><%= element.email %></td>
                         <td>
-                            <a href="details/<%= element.nama %>" class="badge text-bg-success">Detail</a>
+                            <a href="/details/<%= element.nama %>" class="badge text-bg-success">Detail</a>
                         </td>
                     </tr>  
                 <% }) %>
+            <% } else{  %> 
+                <tr>
+                    <td colspan="5">
+                        <div class="alert alert-danger" role="alert">
+                          Data Tidak Ditemukan...!
+                        </div>
+                    </td>
+                </tr>
             <% } %>           
             
         </tbody>
     </table>
 </div>
+
+<script src="/find-contact.js"></script>
 

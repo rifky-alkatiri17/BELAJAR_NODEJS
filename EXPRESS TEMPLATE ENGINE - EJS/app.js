@@ -45,19 +45,35 @@ app.get('/contact', (req,res)=>{
 	})
 });
 
-app.use('/details/:nama', (req,res,next)=>{
+app.get('/contact/:nama', (req,res)=>{
+	// res.send('ini adalah halaman contact...')
+	const data = loadData('./data/data-contacts.json');
+	const result = findData(data, req.params.nama);	
+	res.render('contact', {
+		layout: 'layouts/main-layout',
+		title:'Halaman Contact',
+		data: result
+	})
+});
+
+/*app.use('/details/:nama', (req,res,next)=>{
 	const data = loadData('./data/data-contacts.json');
 	const result = findData(data, req.params.nama);
 	if(!result){
 		return res.status(404).send('Data tidak ditemukan');
+	}else{
+		console.log(result)
 	}
 	next()
-});
+});*/
 
 app.get('/details/:nama', (req,res)=>{
-	res.render('contact',{
+	const data = loadData('./data/data-contacts.json');
+	const result = findData(data, req.params.nama);
+	console.log(result);
+	res.render('details',{
 		layout:'layouts/main-layout',
-		title: 'Halaman Contact',
+		title: 'Halaman Details',
 		data: result
 	})
 });
