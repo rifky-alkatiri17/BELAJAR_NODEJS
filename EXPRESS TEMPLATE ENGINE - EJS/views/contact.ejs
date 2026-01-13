@@ -12,28 +12,17 @@
             </tr>
         </thead>
         <tbody>
-            <% if (data && data.length > 0) { %>
-                <% data.forEach((element,i) => { %>
-                    <tr>
-                        <td scope="row"><%= i+1 %></td>
-                        <td><%= element.nama %></td>
-                        <td><%= element.nohp %></td>
-                        <td><%= element.email %></td>
-                        <td>
-                            <a href="/details/<%= element.nama %>" class="badge text-bg-success">Detail</a>
-                        </td>
-                    </tr>  
-                <% }) %>
-            <% } else{  %> 
+           <% data.forEach((element,i) => { %>
                 <tr>
-                    <td colspan="5">
-                        <div class="alert alert-danger" role="alert">
-                          Data Tidak Ditemukan...!
-                        </div>
+                    <td scope="row"><%= i+1 %></td>
+                    <td><%= element.nama %></td>
+                    <td><%= element.nohp %></td>
+                    <td><%= element.email %></td>
+                    <td>
+                        <a href="/details/<%= element.nama %>" class="badge text-bg-success">Detail</a>
                     </td>
-                </tr>
-            <% } %>           
-            
+                </tr>  
+            <% }) %> 
         </tbody>
     </table>
 </div>
