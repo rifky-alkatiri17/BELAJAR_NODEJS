@@ -14,4 +14,11 @@ const findData = (array, search)=>{
     return dataFilter
 }
 
-module.exports = {loadData, findData}
+const addContact = (obj) =>{
+    let dataBuffer = fs.readFileSync('data/data-contacts.json', 'utf-8'); //string
+    let data = JSON.parse(dataBuffer);
+    data.push(obj);
+    fs.writeFileSync('data/data-contacts.json', JSON.stringify(data));
+}
+
+module.exports = {loadData, findData, addContact}

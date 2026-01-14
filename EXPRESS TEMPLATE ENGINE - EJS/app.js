@@ -4,13 +4,14 @@ const port = 7000;
 // const ejs = require('ejs');
 const fs = require('fs'); //core
 const expressLayouts = require('express-ejs-layouts'); //npm
-const {loadData, findData} = require('./utils/functions.js'); //user-defined
+const {loadData, findData, addContact} = require('./utils/functions.js'); //user-defined
 const { title } = require('process');
 
 // file ejs relative terhadap folder views
 app.set('view engine', 'ejs'); //config
-app.use(express.static('public')); //config
-app.use(expressLayouts); //config
+app.use(express.static('public')); //built-in middleware
+app.use(expressLayouts); //third party middleware
+app.use(express.urlencoded()); //built-in middleware
 
 // middleware
 /*app.use('/',(req,res,next)=>{
@@ -55,6 +56,19 @@ app.get('/contacts', (req,res)=>{
 	})*/
 	// console.log(data);
 	res.send(data)
+});
+
+app.get('/contact/add', (req,res)=>{
+	res.render('add',{
+		layout: 'layouts/main-layout',
+		title: 'Halaman Tambah'
+	})
+});
+
+app.post('/contact', (req,res)=>{
+	// res.send(req.body)
+	addContact(req.body); //user defined func
+	res.redirect('/contact')
 });
 
 app.get('/contact/:nama', (req,res)=>{
