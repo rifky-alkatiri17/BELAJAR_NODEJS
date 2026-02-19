@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "nama": "Ahmad Wongso",
+    "nip": "198705122010011001",
+    "jabatan": "Analis Kepegawaian",
+    "instansi": "Dinas Pendidikan"
+  },
+  {
+    "id": "2",
+    "nama": "Siti Nurhaliza edit",
+    "nip": "199002182011012002",
+    "jabatan": "Staf Administrasi",
+    "instansi": "Dinas Kesehatan"
+  },
+  {
+    "id": 3,
+    "nama": "Budi A",
+    "nip": "198312052009031003",
+    "jabatan": "Pranata Komputer",
+    "instansi": "Diskominfo"
+  },
+  {
+    "id": 4,
+    "nama": "Titiek Wulandari",
+    "nip": "199511202019032004",
+    "jabatan": "Pengelola Data",
+    "instansi": "Bappeda"
+  },
+  {
+    "id": 5,
+    "nama": "Dedi Pratama",
+    "nip": "198908152012041005",
+    "jabatan": "Auditor",
+    "instansi": "Inspektorat"
+  },
+  {
+    "id": 6,
+    "nama": "Lina Marlina",
+    "nip": "199304102020052006",
+    "jabatan": "Perencana",
+    "instansi": "Badan Keuangan Daerah"
+  },
+  {
+    "id": 7,
+    "nama": "Rizky Maulana",
+    "nip": "198611252008061007",
+    "jabatan": "Kepala Sub Bagian Umum",
+    "instansi": "Sekretariat Daerah"
+  },
+  {
+    "id": 8,
+    "nama": "Dewi Anggraini",
+    "nip": "199712182021072008",
+    "jabatan": "Staf Pelayanan",
+    "instansi": "Dinas Kependudukan dan Catatan Sipil"
+  },
+  {
+    "id": 9,
+    "nama": "Andi Attamimi",
+    "nip": "198402022007081009",
+    "jabatan": "Pengawas Lapangan",
+    "instansi": "Dinas Pekerjaan Umum"
+  },
+  {
+    "id": 10,
+    "nama": "Maya Kartika",
+    "nip": "199610142020092010",
+    "jabatan": "Arsiparis",
+    "instansi": "Dinas Perpustakaan dan Arsip"
+  }
+]

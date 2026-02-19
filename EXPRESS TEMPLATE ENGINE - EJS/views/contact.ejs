@@ -1,0 +1,35 @@
+<h3 class="text-center">Ini Adalah Halaman <%= title %> </h3>
+
+<div class="d-grid gap-2 mt-3 mb-3 ps-2 pe-2">
+    <a href="/contact/add" class="btn btn-primary">Add Contact</a>
+</div>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">No</th>
+            <th scope="col">Nama</th>
+            <th scope="col">No. Hp</th>
+            <th scope="col">Email</th>
+            <th scope="col">Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+           <% data.forEach((element,i) => { %>
+                <tr>
+                    <td scope="row"><%= i+1 %></td>
+                    <td><%= element.nama %></td>
+                    <td><%= element.nohp %></td>
+                    <td><%= element.email %></td>
+                    <td>
+                        <a href="/details/<%= element.nama %>" class="badge text-bg-success">Detail</a>
+                    </td>
+                </tr>  
+            <% }) %> 
+        </tbody>
+    </table>
+</div>
+
+<script src="/find-contact.js"></script>
+
