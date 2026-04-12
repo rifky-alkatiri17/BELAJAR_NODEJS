@@ -1,0 +1,58 @@
+
+<form action="/pegawai/ubah/<%= pegawai.id %>" method="POST" class="mt-4">
+
+  <!-- ID (hidden) -->
+  <input type="hidden" name="id" value="<%= pegawai.id %>">
+
+  <div class="mb-3">
+    <label class="form-label">Nama</label>
+    <input
+      type="text"
+      name="nama"
+      class="form-control"
+      value="<%= pegawai.nama %>"
+      required
+    >
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">NIP</label>
+    <input
+      type="text"
+      name="nip"
+      class="form-control"
+      value="<%= pegawai.nip %>"
+      required
+    >
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Jabatan</label>
+    <input
+      type="text"
+      name="jabatan"
+      class="form-control"
+      value="<%= pegawai.jabatan %>"
+      required
+    >
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Instansi</label>
+    <input
+      type="text"
+      name="instansi"
+      class="form-control"
+      value="<%= pegawai.instansi %>"
+      required
+    >
+  </div>
+
+  <button type="submit" class="btn btn-primary">
+    Simpan Perubahan
+  </button>
+
+  <a href="/pegawai" class="btn btn-secondary">
+    Batal
+  </a>
+</form>
