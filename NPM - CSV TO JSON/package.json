@@ -1,0 +1,5 @@
+{
+	"dependencies": {
+		"convert-csv-to-json": "^4.31.0"
+	}
+}
